@@ -32,37 +32,19 @@ void Display(struct Node* p){
 	}
 }
 
-void Delete(int pos){
-	struct Node *p=first;
-	struct Node *q = NULL;
+void concatenation(struct Node* p, struct Node *q)
+{
+	while(p)
+		p=p->next;
 	
-	if(pos!=1){
-		
-		for(int i=0;i<pos-1;i++){
-			q=p;
-			p=p->next;
-		}
-		if(p)
-		{
-			q->next=p->next;
-			delete p;
-		}
-	}
-	else{
-		p=first;
-		first=first->next;
-		delete p;
-	}
-	
-	
+	p->next=q;
+	q=NULL;
 }
+
 int main()
 {	
-	int A[] = {3,5,7,10,25,8};
+	int A[] = {3,5,5,6,8,8};
 	create(A, 6);
-	Display(first);
-	printf("\n");
-	Delete(3);
 	Display(first);
 	printf("\n");
 }
