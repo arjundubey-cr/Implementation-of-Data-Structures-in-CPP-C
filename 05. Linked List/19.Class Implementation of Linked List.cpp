@@ -22,7 +22,7 @@ class LinkedList{
 		
 		//Defining Basic Linked List Function
 		void Display();
-		void Insert(int index, int data);
+		void Insert(int index, int value);
 		int Delete(int index);
 		int Length();
 };
@@ -56,7 +56,7 @@ LinkedList::~LinkedList()
 	}
 }
 
-LinkedList::Display()
+void LinkedList::Display()
 {
 	Node *p=first;
 	while(p)
@@ -66,16 +66,40 @@ LinkedList::Display()
 	}
 }
 
-LinkedList::Insert(int index, int data)
+void LinkedList::Insert(int index, int value)
 {
+	int i=0;
+	Node *temp, *p=first;
+	temp = new Node;
+	temp->data=value;
 	
+	while(p->next!=NULL&&i<index-1)
+	{
+		p=p->next;
+		i++;
+	}
+	temp->next=p->next;
+	p->next=temp;
 }
 
+int LinkedList::Length()
+{
+	Node *p=first;
+	int len=0;
+	while(p)
+	{
+		len++;
+		p=p->next;
+	}
+	return len;
+}
 int main()
 {	
 	int A[] = {3,5,5,6,8,8};
 	LinkedList l(A, 5);
 	l.Insert(3, 10);
+	printf("Length of Linked List == %d", l.Length());
 	l.Display();
+	
 	return 0;
 }
