@@ -1,16 +1,15 @@
 //Stack implementation of linked list based on FIFO principle;
-//linkedlist== [data, pointer to next node]
-//Definition of linkef list
-//~ struct Node{
-	//~ int data;
-	//~ struct Node* next;
-//~ }
+//class based implementation
 //
 
 #include <stdio.h>
 #include <iostream> //c++ header file
 using namespace std;//for c++ only
 
+class Stack{
+	private:
+		Node *next;
+};
 struct Node{
 	int data;
 	struct Node* next;
