@@ -6,17 +6,23 @@
 #include <iostream> //c++ header file
 using namespace std;//for c++ only
 
-class Stack{
-	private:
+class Node{
+	public:
+		int data;
 		Node *next;
 };
-struct Node{
-	int data;
-	struct Node* next;
-} *top;
 
+class Stack{
+	private:
+		Node *top;
+	public:
+		Stack(){top=NULL;};
+		void push(int x);
+		void pop();
+		void Display();
+};
 
-void push(int value)
+void Stack::push(int value)
 {
 	struct Node *temp = new Node();
 	if(temp==NULL) 
@@ -29,7 +35,7 @@ void push(int value)
 	top=temp;
 }
 
-void pop()
+void Stack::pop()
 {
 	if(top==NULL)
 	{ 
