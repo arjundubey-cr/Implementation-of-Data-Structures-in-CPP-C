@@ -7,8 +7,8 @@ int add(int x, int y){
 
 int main()
 {
-int a,b;
-a=3;
-b=3;
-cout<<add(a,b);
+  int a,b;
+  a=3;
+  b=3;
+  cout<<add(a,b);
 }
