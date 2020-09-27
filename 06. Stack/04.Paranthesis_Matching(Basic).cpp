@@ -2,20 +2,6 @@
 #include <cstring>
 using namespace std;
 
-class Stack{
-    private:
-        int size;
-        int top;
-        char *s;
-    public:
-        void push(Stack *st, int x);
-        void pop(Stack *st);
-        int isEmpty(Stack st);
-        int isBalanced(char *exp);
-};
-
-
-
 struct Stack{
     int size;
     int top;
@@ -32,7 +18,7 @@ void push(Stack *st, int x)
         st->top++;
         st->s[st->top]=x;
     }
-    
+
 }
 
 void pop(Stack *st)
@@ -42,7 +28,7 @@ void pop(Stack *st)
     {
         st->top--;
     }
-    
+
 }
 
 int isEmpty(Stack st)
@@ -55,7 +41,7 @@ int isEmpty(Stack st)
     {
         return false;
     }
-    
+
 }
 int isBalanced(char *exp)
 {

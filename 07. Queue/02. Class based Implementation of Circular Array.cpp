@@ -39,6 +39,7 @@ void CircularQueue::enqueue(int x){
     return;
   }
   else{
+    Q[rear]=x;
     rear=(rear+1)%size;
   }
 }
